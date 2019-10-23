@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+		    <p>Breadcrumbs for any product (listing 2):</p>
+		    <ul class="breadcrumbs">
+		        
+		        {% for category in product_categories %}
+		        <li>
+		        	{% set idx = loop.index - 1 %}
+
+		        	{% if idx > 0 %}
+		        	{% for i in 1..idx | number_format %}&nbsp;&nbsp;&nbsp;&nbsp;{% endfor %}
+		        	{% endif %}
+
+		        	<a href="#">{{ category.name }}</a></li>
+
+		        {% endfor %}
+
+		    </ul>
+
+		    <h1>Product: {{ product.name }}</h1>
+		    
+		</div>
+	</div>
+</div>
+{% endblock %}

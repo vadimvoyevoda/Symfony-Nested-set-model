@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nested Set Model{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+		    <h1>Hello, this is first task</h1>
+
+		    <p>Author: <a href="https://www.linkedin.com/in/vadim-voievoda-81ab839a/" target="_blank">Vadim Voievoda</a></p>
+
+		    <ul>
+		        <li><a href="{{ path('categories') }}">Categories Tree (Listing 1)</a></li>
+		        <li><a href="{{ path('all_products') }}">Product Breadcrumbs (Listing 2)</a></li>
+		        <li><a href="{{ path('categories_total') }}">Products Count in Category (Listing 3)</a></li>
+		    </ul>
+
+		</div>
+	</div>
+</div>
+{% endblock %}

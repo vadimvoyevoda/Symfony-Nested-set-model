@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h1>Categories</h1>
+            <p>Full tree structure (listing 1):</p>
+
+            <ul class="categories">
+            
+            {% set level = 0 %}
+            
+            {% for category in categories %}
+
+        		{% if category.level < level %}
+        		</ul>
+            	{% endif %}
+
+            	<li class="level-{{ category.level }}">{{ category.name }}</li>
+            	
+            	{% if category.has_children %}
+            	<ul class="children">
+            	{% endif %}
+
+            	{% set level = category.level %}
+            	
+            {% endfor %}
+            
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

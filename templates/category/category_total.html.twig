@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories Total{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h1>Categories Total</h1>
+            <p>Information about number of products in categories (listing 3):</p>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>category</th>
+                        <th>product_count</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for category in categories %}
+                        <tr>
+                            <td>{{ category.name }}</td>
+                            <td>{{ category.product_count }}</td>
+                        </tr>                    	
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

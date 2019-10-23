@@ -1,0 +1,16 @@
+header{
+	margin-bottom: 20px;
+}
+
+header .dropdown-menu {
+    width: 250px;
+}
+
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+}
+
+table{
+	max-width: 500px;
+}
